@@ -51,19 +51,18 @@ for stable real-time motion simulation.
 
 ### Gravity Simulation
 
-<!-- Add screenshot here -->
 
 ![Gravity](screenshots/gravity.png)
 
 ### Collision Physics
 
-<!-- Add screenshot here -->
 
-![Collisions](screenshots/collisions.png)
+
+![Collisions](screenshots/collison.png)
 
 ### Spring Mechanics
 
-<!-- Add screenshot here -->
+
 
 ![Springs](screenshots/springs.png)
 
@@ -71,7 +70,7 @@ for stable real-time motion simulation.
 
 ## Demo GIF
 
-<!-- Add GIF here -->
+
 
 ![Demo](screenshots/demo.gif)
 
@@ -96,12 +95,6 @@ physics_sandbox/
 
 ---
 
-## Installation
-
-```bash
-pip install -r requirements.txt
-python main.py
-```
 
 
 
