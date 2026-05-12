@@ -1,32 +1,12 @@
 """
-main.py — Application entry point and event loop.
-
-Responsibilities
-────────────────
-* Initialise pygame and create the window.
-* Create a World and Renderer.
-* Handle all user input (mouse, keyboard).
-* Run the fixed-timestep simulation loop.
-* Dispatch rendering each frame.
+main.py
 
 Interaction modes
 ─────────────────
-  SPAWN (default) : Left-drag to launch a ball; right-click deletes.
-  SPRING          : Click first ball, click second → creates a spring.
-  PIN             : Click a ball to toggle its pinned state.
+  SPAWN (default) : Left click and drag
+  SPRING          : Click first ball, click second → creates a spring
+  PIN             :can pin ball at any state
 
-Keyboard shortcuts (full list in HUD overlay):
-  SPACE : pause/resume
-  R     : reset
-  ↑/↓   : gravity ±50
-  G/H   : spring constant ±20
-  D/F   : damping ±1
-  M/N   : spawn mass ×1.5 / ÷1.5
-  E     : toggle Euler ↔ RK4
-  V     : toggle velocity arrows
-  T     : toggle trails
-  C     : plot energy graph (matplotlib)
-  X     : save energy graph to PNG
 """
 
 import sys
@@ -41,13 +21,13 @@ from src.world import World, DEFAULT_GRAVITY
 from src.renderer import Renderer
 from src.plotter import plot_energy, save_energy_plot
 
-# ── window settings ────────────────────────────────────────────────────────
+# window settings 
 WIDTH, HEIGHT = 1200, 780
 FPS_TARGET    = 60
 TITLE         = "Interactive Physics Sandbox"
 
-# ── spawn parameters (adjustable at runtime) ──────────────────────────────
-LAUNCH_SCALE  = 3.0    # pixels of drag → velocity multiplier
+# spawn parameters
+LAUNCH_SCALE  = 3.0   
 BALL_COLORS   = [
     (100, 200, 255), (255, 140,  80), (120, 255, 160),
     (255, 110, 170), (200, 150, 255), (255, 230,  80),
@@ -68,13 +48,13 @@ def run():
     world    = World(WIDTH, HEIGHT, gravity=DEFAULT_GRAVITY, integrator="euler")
     renderer = Renderer(screen)
 
-    # ── mutable simulation parameters ─────────────────────────────────────
+    # mutable simulation parameters
     spawn_mass        = 1.0
     spring_k          = 200.0
     spring_damping    = 5.0
     integrator_label  = "Euler"
 
-    # ── interaction state ──────────────────────────────────────────────────
+    # ── interaction state 
     mode              = "spawn"    # 'spawn' | 'spring' | 'pin'
     drag_start        = None       # Vec2 — where LMB was pressed
     drag_current      = None       # Vec2 — current mouse pos during drag
