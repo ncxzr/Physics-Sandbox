@@ -29,13 +29,12 @@ F=ma
 
 Hooke’s Law:
 
-genui{"math_block_widget_always_prefetch_v2":{"content":"F=-kx"}}
+F=-kx
 
 Momentum Conservation:
 m_1u_1+m_2u_2=m_1v_1+m_2v_2
 
 ---
-
 ## Numerical Methods
 
 The simulation uses:
@@ -74,31 +73,12 @@ for stable real-time motion simulation.
 
 ![Demo](screenshots/demo.gif)
 
----
-
-## Project Structure
-
-```text
-physics_sandbox/
-│
-├── main.py
-├── requirements.txt
-└── src/
-    ├── vector.py
-    ├── ball.py
-    ├── spring.py
-    ├── collision.py
-    ├── world.py
-    ├── renderer.py
-    └── plotter.py
-```
-
----
 
 
 
 
-## Technologies Used
+
+## software used
 
 * Python
 * pygame
