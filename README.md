@@ -64,7 +64,7 @@ for stable real-time motion simulation.
 
 
 
-![Springs](screenshots/springs.png)
+![Springs](screenshots/motion.png)
 
 ---
 
